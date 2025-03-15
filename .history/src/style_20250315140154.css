@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#wireframeToggle {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#wireframeToggle:hover {
+  background-color: #555;
+}
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 10px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Semi-transparent background for readability */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+#wireframeToggle {
+  padding: 12px 24px; /* Larger padding for better touch targets on mobile */
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff; /* White text for contrast */
+  background-color: #4a90e2; /* Pleasant blue color */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+#wireframeToggle:hover {
+  background-color: #357abd; /* Darker blue on hover */
+}
+
+#wireframeToggle:active {
+  background-color: #2a6099; /* Even darker when clicked */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #wireframeToggle {
+    padding: 10px 20px; /* Slightly smaller padding for smaller screens */
+    font-size: 14px;
+  }
+
+  .controls {
+    bottom: 10px; /* Closer to bottom on mobile */
+    width: 80%; /* Wider container on small screens */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #wireframeToggle {
+    padding: 8px 16px; /* Even smaller for very small screens */
+    font-size: 12px;
+  }
+}

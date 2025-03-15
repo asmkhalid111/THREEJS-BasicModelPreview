@@ -1,0 +1,173 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+  background-color: #1a1a1a; /* Slightly lighter background */
+}
+
+body {
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif; /* Modern font stack */
+  -webkit-font-smoothing: antialiased; /* Improve font rendering on WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Improve font rendering on Firefox macOS */
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(0); /* Force hardware acceleration */
+  z-index: 10;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  backface-visibility: hidden; /* Prevent rendering artifacts */
+}
+
+#wireframeToggle {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600; /* Slightly lighter than bold for better rendering */
+  color: #ffffff;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-rendering: optimizeLegibility; /* Prioritize text clarity */
+  -webkit-font-smoothing: antialiased; /* Ensure clarity on WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Ensure clarity on Firefox macOS */
+}
+
+#wireframeToggle:hover {
+  background-color: #357abd;
+}
+
+#wireframeToggle:active {
+  background-color: #2a6099;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #wireframeToggle {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .controls {
+    bottom: 10px;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #wireframeToggle {
+    padding: 8px 16px;
+    font-size: 14px; /* Slightly larger to avoid blurriness on small screens */
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#wireframeToggle {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#wireframeToggle:hover {
+  background-color: #555;
+}
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 10px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Semi-transparent background for readability */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+#wireframeToggle {
+  padding: 12px 24px; /* Larger padding for better touch targets on mobile */
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff; /* White text for contrast */
+  background-color: #4a90e2; /* Pleasant blue color */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+#wireframeToggle:hover {
+  background-color: #357abd; /* Darker blue on hover */
+}
+
+#wireframeToggle:active {
+  background-color: #2a6099; /* Even darker when clicked */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #wireframeToggle {
+    padding: 10px 20px; /* Slightly smaller padding for smaller screens */
+    font-size: 14px;
+  }
+
+  .controls {
+    bottom: 10px; /* Closer to bottom on mobile */
+    width: 80%; /* Wider container on small screens */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #wireframeToggle {
+    padding: 8px 16px; /* Even smaller for very small screens */
+    font-size: 12px;
+  }
+}
