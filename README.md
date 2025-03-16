@@ -1,5 +1,7 @@
 # Three.js `Very Basic` Interactive Model Viewer
 
+🔗 **Live Demo:** [Three.js Model Viewer](https://threejs-model-preview-asmkhalid111.netlify.app/)  
+
 ## 🚀 Latest Updates (March 16, 2025)
 ### New Features:
 1. **Mesh Color Picker:**
