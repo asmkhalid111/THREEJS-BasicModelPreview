@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import { Clock } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { color } from "three/tsl";
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -24,9 +23,13 @@ const scene = new THREE.Scene();
 // Initial Geometry and Material
 const geometry = new THREE.BoxGeometry(1, 1, 1); // Start with cube
 const material = new THREE.MeshBasicMaterial({
-  color: "#877AF5",
+  color: 0x0000ff,
   wireframe: true,
 });
+
+function colorPicker() {
+  var colorinput = document.getElementById("inputcolor");
+}
 
 // Initial Mesh
 let mesh = new THREE.Mesh(geometry, material);
@@ -63,42 +66,8 @@ toggleButton.addEventListener("click", () => {
   toggleButton.textContent = `Wireframe: ${material.wireframe ? "ON" : "OFF"}`;
 });
 
-const colorInput = document.getElementById("inputColor");
-colorInput.addEventListener("input", () => {
-  material.color.set(colorInput.value);
-  //  Saving the previously used color as the new color after page relead
-  localStorage.setItem("selectedColor", colorInput.value);
-});
-
-// On page reload
-
-const savedColor = localStorage.getItem("selectedColor");
-if (savedColor) {
-  material.color.set(savedColor);
-  colorInput.value = "#" + material.color.getHexString(); // It keeps the color from the material as the first color in the color input field
-}
-
-// default color using mesh color clicking
-
-const defaultColorHex = "#00FFFF";
-
-const defaultColor = document.getElementById("mesh-default-color");
-defaultColor.addEventListener("click", () => {
-  const currentColorHex = "#" + material.color.getHexString();
-
-  if (currentColorHex != defaultColor) {
-    // if current color is not default, we will reset it
-
-    material.color.set(defaultColorHex);
-    colorInput.value = defaultColorHex; // Updates the color in the input field
-    // And after refresh, it keeps the default color
-    localStorage.setItem("selectedColor", colorInput.value);
-  }
-});
-
-const modelSelect = document.getElementById("modelSelect");
-
 // Model Selection Dropdown
+const modelSelect = document.getElementById("modelSelect");
 modelSelect.addEventListener("change", () => {
   const selectedModel = modelSelect.value;
   // Remove the current mesh

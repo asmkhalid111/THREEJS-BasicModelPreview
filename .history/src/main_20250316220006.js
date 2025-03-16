@@ -91,8 +91,6 @@ defaultColor.addEventListener("click", () => {
 
     material.color.set(defaultColorHex);
     colorInput.value = defaultColorHex; // Updates the color in the input field
-    // And after refresh, it keeps the default color
-    localStorage.setItem("selectedColor", colorInput.value);
   }
 });
 

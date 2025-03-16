@@ -80,20 +80,16 @@ if (savedColor) {
 
 // default color using mesh color clicking
 
-const defaultColorHex = "#00FFFF";
+const defaultColorHex = 
 
 const defaultColor = document.getElementById("mesh-default-color");
 defaultColor.addEventListener("click", () => {
-  const currentColorHex = "#" + material.color.getHexString();
+    const currentColorHex = '#' + material.color.getHexString();
 
-  if (currentColorHex != defaultColor) {
-    // if current color is not default, we will reset it
+    if (currentColorHex != defaultColor)
 
-    material.color.set(defaultColorHex);
-    colorInput.value = defaultColorHex; // Updates the color in the input field
-    // And after refresh, it keeps the default color
-    localStorage.setItem("selectedColor", colorInput.value);
-  }
+
+  material.color.set = "#877AF5";
 });
 
 const modelSelect = document.getElementById("modelSelect");

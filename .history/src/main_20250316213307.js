@@ -62,39 +62,15 @@ toggleButton.addEventListener("click", () => {
   material.wireframe = !material.wireframe;
   toggleButton.textContent = `Wireframe: ${material.wireframe ? "ON" : "OFF"}`;
 });
+colorInput.value = "#" + material.color.getHexString(); // It keeps the color from the material as the first color in the color input field
 
 const colorInput = document.getElementById("inputColor");
 colorInput.addEventListener("input", () => {
   material.color.set(colorInput.value);
-  //  Saving the previously used color as the new color after page relead
-  localStorage.setItem("selectedColor", colorInput.value);
 });
 
-// On page reload
-
-const savedColor = localStorage.getItem("selectedColor");
-if (savedColor) {
-  material.color.set(savedColor);
-  colorInput.value = "#" + material.color.getHexString(); // It keeps the color from the material as the first color in the color input field
-}
-
-// default color using mesh color clicking
-
-const defaultColorHex = "#00FFFF";
-
-const defaultColor = document.getElementById("mesh-default-color");
-defaultColor.addEventListener("click", () => {
-  const currentColorHex = "#" + material.color.getHexString();
-
-  if (currentColorHex != defaultColor) {
-    // if current color is not default, we will reset it
-
-    material.color.set(defaultColorHex);
-    colorInput.value = defaultColorHex; // Updates the color in the input field
-    // And after refresh, it keeps the default color
-    localStorage.setItem("selectedColor", colorInput.value);
-  }
-});
+//  Saving the previously used color as the new color after page relead
+localStorage.setItem("selectedColor", colorInput.value);
 
 const modelSelect = document.getElementById("modelSelect");
 
