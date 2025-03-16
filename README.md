@@ -60,7 +60,7 @@
 ### Prerequisites:
 - Ensure you have [Node.js](https://nodejs.org/) installed.
 - Use a local server for best results (e.g., `Vite`, `Live Server`, or `http-server`).
-- Suggested `Vite`
+- `Vite` is Suggested
 
 ### Steps:
 1. Clone this repository:
