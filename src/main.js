@@ -37,6 +37,55 @@ const sizes = {
   height: window.innerHeight,
 };
 
+
+window.addEventListener("resize", () => {
+  // Update sizes
+
+  sizes.width = window.innerWidth,
+    sizes.height = window.innerHeight
+
+  // Update camera
+
+  camera.aspect = sizes.width / sizes.height
+  camera.updateProjectionMatrix()
+
+  // Update renderer
+
+  renderer.setSize(sizes.width, sizes.height)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+})
+
+
+window.addEventListener("dblclick", () => {
+
+  const fullScreenElement = document.fullscreenElement || document.webkitfullScreenElement
+
+
+  if (!document.fullscreenElement) {
+    if (canvas.requestFullscreen()) {
+      canvas.requestFullscreen()
+
+    }
+    else if (canvas.webkitrequestFullscreen()) {
+      canvas.webkitrequestFullscreen()
+    }
+    console.log("GO Fullscreen")
+  }
+  else {
+
+    if (document.exitFullscreen()) {
+      document.exitFullscreen()
+
+    }
+    else if (document.webkitexitFullscreen) {
+      document.webkitexitFullscreen
+    }
+    console.log("Exiting Fullscreen")
+  }
+})
+
+
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
 camera.position.z = 3;

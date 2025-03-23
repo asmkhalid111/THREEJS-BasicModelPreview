@@ -9,7 +9,8 @@ body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212; /* Dark mode background */
+  background-color: #121212;
+  /* Dark mode background */
 }
 
 /* Canvas */
@@ -37,7 +38,8 @@ body {
   display: flex;
   gap: 12px;
   align-items: center;
-  backdrop-filter: blur(10px); /* Soft blur for a glass effect */
+  backdrop-filter: blur(10px);
+  /* Soft blur for a glass effect */
 }
 
 /* Buttons */
